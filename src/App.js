@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+// import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import { createBrowserHistory } from 'history';
+// @ts-ignore
+import {syncHistoryWithStore} from "react-router-redux";
+// import queryString from 'query-string';
+// import _get from 'lodash/get';
+
+import Provider from "react-redux/es/components/Provider";
+import configureStore from "./redux/configureStore";
+import './redux/api';
+// import { If, Choose } from 'tsx-control-statements/components';
+
 import './App.css';
+import Graphic from "./Graphic/Graphic";
+
+export const store = configureStore();
+export const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Provider store={store}>
+            <div className="App">
+                <Graphic/>
+            </div>
+      </Provider>
   );
 }
 

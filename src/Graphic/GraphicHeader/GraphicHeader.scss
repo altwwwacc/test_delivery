@@ -1,0 +1,50 @@
+.GraphicHeader{
+
+  padding: 20px 30px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  &__options {
+    display: flex;
+    align-items: stretch;
+  }
+  &__item {
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    &:first-child {
+      margin-left: 0;
+    }
+    &--destination {
+      .PortsSelect {
+        margin-left: 15px;
+        &:first-child {
+          margin-left: 5px;
+        }
+      }
+    }
+    &--date {
+      input {
+        border: 0;
+        height: 100%;
+        outline: none;
+        font-size: 16px;
+        width: 85px;
+      }
+      .ArrowForwardIcon {
+        fill: #3369fe;
+        margin-right: 4px;
+      }
+    }
+  }
+  .react-datepicker-wrapper,
+  .react-datepicker__input-container{
+    align-items: stretch;
+  }
+  .react-datepicker__input-container {
+    height: 100%;
+  }
+}

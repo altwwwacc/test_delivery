@@ -1,0 +1,11 @@
+.Graphic {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__header {
+    flex: 1;
+  }
+  .GraphicView {
+    flex: 1 1 100%;
+  }
+}
